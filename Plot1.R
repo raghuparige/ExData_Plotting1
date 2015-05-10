@@ -23,8 +23,15 @@ date_time <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(date_time)
 
 ## Draw the Plot 1
-hist(data$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "Red")
+##hist(data$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "Red")
 
 ## Save the graph to a png file
-dev.copy(png, file = "C:/R/ExData_Plotting1/plot1.png", height = 480, width = 480)
+##dev.copy(png, file = "C:/R/ExData_Plotting1/plot1.png", height = 480, width = 480)
+
+png("C:/R/plot1.png", width = 480, height = 480)
+hist(data$Global_active_power, col="red",
+           xlab="Global Active Power (kilowatts)",
+           main="Global Active Power")
 dev.off()
+
+#dev.off()
